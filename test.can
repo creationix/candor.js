@@ -1,0 +1,38 @@
+// Keywords: nil, return, scope, new, if, else, while, break
+
+// Primitives
+nil
+true
+false
+1
+'abc'
+"abc"
+[1, 2, 3]
+{ a: 1, 'b': 2, "c": 3 }
+
+// Variables and objects
+a = 1
+a.b = "abc"
+a.b.c = a
+a[b()][c] = x
+
+// Functions
+a() {
+  return 1
+}
+a()
+
+// Blocks
+{
+  scope a // use this to interact with variables from outer blocks
+          // NOTE: the closest one will be choosed
+}
+
+// Not implemented yet
+
+// Expr blocks
+({
+  a = 1
+})(x)
+// is equivalent to
+x.a = 1
