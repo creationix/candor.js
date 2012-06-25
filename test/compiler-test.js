@@ -11,6 +11,7 @@ describe('Candor.js compiler', function() {
   describe('basics', function() {
     unit('should compile number', '13589', null, 13589);
     unit('should compile binop', '13589 + 456', null, 14045);
+    unit('should compile object', '({ a: 1 }).a', null, 1);
   });
 
   describe('property accessor', function() {
