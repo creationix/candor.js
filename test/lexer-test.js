@@ -46,16 +46,24 @@ describe('Candor.js lexer', function() {
   it('should emit keyword', function() {
     var lexer = candor.lexer.create('clone');
 
-    lexer.expect('keyword', 'clone');
+    lexer.expect('clone', 'clone');
     lexer.expect('end');
   });
 
   it('should emit punctuation', function() {
     var lexer = candor.lexer.create('... : /');
 
-    lexer.expect('punc', '...');
-    lexer.expect('punc', ':');
-    lexer.expect('punc', '/');
+    lexer.expect('...');
+    lexer.expect(':');
+    lexer.expect('/');
+    lexer.expect('end');
+  });
+
+  it('should skip comments', function() {
+    var lexer = candor.lexer.create('// 123\n /* abc */abc/* bcd \\*/ *///123');
+
+    lexer.expect('cr');
+    lexer.expect('name', 'abc');
     lexer.expect('end');
   });
 });
