@@ -50,4 +50,14 @@ describe('Candor.js parser', function() {
             [['number',2],['number',2]]
           ]]
        ]]);
+
+  unit('should parse array decl', 'a = [1,2,3]',
+       [[ 'assign',
+          ['name','a'],
+          ['array', [
+            ['number', 1],
+            ['number', 2],
+            ['number', 3]
+          ]]
+       ]]);
 });
