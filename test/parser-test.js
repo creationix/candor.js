@@ -40,7 +40,7 @@ describe('Candor.js parser', function() {
        ]]);
 
   unit('should parse func decl', 'a() {}',
-       [['function',['name','a'],[],['block',[['nop']]]]]);
+       [['function',['name','a'],[],[['nop']]]]);
 
   unit('should parse object decl', 'a = { a: 1, 2: 2 }',
        [[ 'assign',

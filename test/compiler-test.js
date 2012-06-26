@@ -77,4 +77,11 @@ describe('Candor.js compiler', function() {
          null,
          10);
   });
+
+  describe('functions', function() {
+    unit('should work with anonymous', 'return ((a) { return a})(1)',
+         null, 1);
+    unit('should work with named', 'x(a) { return a}\nreturn x(1)',
+         null, 1);
+  });
 });
