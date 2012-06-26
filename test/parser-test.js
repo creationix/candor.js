@@ -46,7 +46,7 @@ describe('Candor.js parser', function() {
        [[ 'assign',
           ['name','a'],
           ['object', [
-            [['name','a'],['number',1]],
+            [['property','a'],['number',1]],
             [['number',2],['number',2]]
           ]]
        ]]);
@@ -60,4 +60,11 @@ describe('Candor.js parser', function() {
             ['number', 3]
           ]]
        ]]);
+
+  unit('should work with loop', 'while(true) { true }',
+       [['while',['true'],['block',[['true']]]]]);
+  unit('should work with if', 'if(true) { true }',
+       [['if',['true'],['block',[['true']]]]]);
+  unit('should work with if/else', 'if(true) { true } else { true }',
+       [['if',['true'],['block',[['true']]],['block',[['true']]]]]);
 });
