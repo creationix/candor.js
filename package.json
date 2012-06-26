@@ -10,6 +10,6 @@
     "mocha": "~1.2.0"
   },
   "scripts": {
-    "test": "mocha --reporter spec test/*-test.js"
+    "test": "mocha --reporter spec --growl test/*-test.js"
   }
 }

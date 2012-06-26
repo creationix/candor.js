@@ -27,7 +27,7 @@ describe('Candor.js parser', function() {
   unit('should parse multiple statements', '1\n2\n3',
        [['number',1],['number',2],['number',3]]);
 
-  unit('should parse call', 'a.b(a,b,c)',
+  unit('should parse call', 'a[b](a,b,c)',
        [[ 'call',
           ['member',['name','a'],['name','b']],
           [['name','a'],['name','b'],['name','c']]
@@ -35,7 +35,7 @@ describe('Candor.js parser', function() {
 
   unit('should parse colon call', 'a:b(a,b,c)',
        [[ 'call',
-          ['member',['name','a'],['name','b']],
+          ['member',['name','a'],['property','b']],
           [['self'], ['name','a'],['name','b'],['name','c']]
        ]]);
 
