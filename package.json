@@ -1,6 +1,8 @@
 {
   "name": "candor.js",
   "version": "0.0.1",
+
+  "bin": "./bin/candor.js",
   "main": "./lib/candor.js",
 
   "dependencies": {
