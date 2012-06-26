@@ -83,5 +83,10 @@ describe('Candor.js compiler', function() {
          null, 1);
     unit('should work with named', 'x(a) { return a}\nreturn x(1)',
          null, 1);
+    unit('should work with colon call',
+         'x(self, a) { return self.y + a }\n' +
+         'b = { x: x, y: 1}\n' +
+         'return b:x(1)',
+         null, 2);
   });
 });
