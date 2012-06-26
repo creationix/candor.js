@@ -90,5 +90,11 @@ describe('Candor.js compiler', function() {
          'b = { x: x, y: 1}\n' +
          'return b:x(1)',
          null, 2);
+    unit('should work with vararg',
+         'x(self, a...) { return a[0] + a[1] }\n' +
+         'list = [1,2]\n' +
+         'b = { x: x }\n' +
+         'return b:x(list...) + x(nil, list...)',
+         null, 6);
   });
 });
