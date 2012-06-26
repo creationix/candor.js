@@ -9,6 +9,7 @@ describe('Candor.js parser', function() {
   }
 
   unit('should parse number', '13589', [['number', 13589]]);
+  unit('should parse number with cr', '13589\n', [['number', 13589]]);
 
   unit('should parse binary operation', '123 + 456',
        [['binop','+',['number',123],['number',456]]]);
