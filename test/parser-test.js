@@ -28,6 +28,9 @@ describe('Candor.js parser', function() {
   unit('should parse multiple statements', '1\n2\n3',
        [['number',1],['number',2],['number',3]]);
 
+  unit('should parse property assignment', 'a.b = 1',
+       [['assign',['member',['name','a'],['property','b']],['number',1]]]);
+
   unit('should parse call', 'a[b](a,b,c)',
        [[ 'call',
           ['member',['name','a'],['name','b']],
