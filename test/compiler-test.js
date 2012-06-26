@@ -18,6 +18,8 @@ describe('Candor.js compiler', function() {
     unit('should compile binop', 'return 13589 + 456', null, 14045);
     unit('should compile object', 'return ({ a: 1 }).a', null, 1);
     unit('should compile array', 'return ([1,2,3])[1]', null, 2);
+    unit('should compile unop', 'a = 1\nreturn a++ + a', null, 3);
+    unit('should compile unop', 'a = 1\nreturn ++a + a', null, 4);
   });
 
   describe('property accessor', function() {
