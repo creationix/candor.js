@@ -19,11 +19,9 @@ describe('Candor.js lexer', function() {
   });
 
   it('should emit floating number', function() {
-    var lexer = candor.lexer.create('123.456 123e5 123e-4');
+    var lexer = candor.lexer.create('123.456');
 
     lexer.expect('number', 123.456);
-    lexer.expect('number', 12300000);
-    lexer.expect('number', 0.0123);
     lexer.expect('end');
   });
 

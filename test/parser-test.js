@@ -37,6 +37,12 @@ describe('Candor.js parser', function() {
           [['name','a'],['name','b'],['name','c']]
        ]]);
 
+  unit('should parse property call', 'a.b(a,b,c)',
+       [[ 'call',
+          ['member',['name','a'],['property','b']],
+          [['name','a'],['name','b'],['name','c']]
+       ]]);
+
   unit('should parse colon call', 'a:b(a,b,c)',
        [[ 'colonCall',
           ['member',['name','a'],['string','b']],
